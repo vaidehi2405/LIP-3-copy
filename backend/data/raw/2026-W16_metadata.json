@@ -1,16 +1,16 @@
 {
   "week_key": "2026-W16",
   "pipeline_phase": "phase_1_scraping",
-  "started_at": "2026-04-26T12:34:17.372264+00:00",
-  "finished_at": "2026-04-26T12:35:40.970839+00:00",
-  "duration_seconds": 83.6,
+  "started_at": "2026-04-26T13:50:19.921504+00:00",
+  "finished_at": "2026-04-26T13:51:43.093156+00:00",
+  "duration_seconds": 83.17,
   "platforms_available": [
     "apple",
     "google"
   ],
   "platforms_failed": [],
   "total_raw_reviews": 1000,
-  "total_normalized_reviews": 318,
+  "total_normalized_reviews": 682,
   "normalization_stats": {
     "total_input": 1000,
     "total_normalized": 1000,
@@ -51,7 +51,7 @@
       "sk": 1
     },
     "all_reviews_outside_window": false,
-    "cross_run_duplicates_skipped": 682
+    "cross_run_duplicates_skipped": 318
   },
   "platform_metadata": {
     "apple": {
@@ -62,8 +62,8 @@
       "pages_fetched": 10,
       "pages_failed": 0,
       "partial": false,
-      "duration_seconds": 54.96,
-      "scraped_at": "2026-04-26T12:35:12.328479+00:00",
+      "duration_seconds": 54.72,
+      "scraped_at": "2026-04-26T13:51:14.637143+00:00",
       "rate_limiter_stats": {
         "total_requests": 10,
         "total_retries": 0
@@ -77,8 +77,8 @@
       "batches_fetched": 5,
       "batches_failed": 0,
       "partial": false,
-      "duration_seconds": 24.43,
-      "scraped_at": "2026-04-26T12:35:36.764801+00:00",
+      "duration_seconds": 24.58,
+      "scraped_at": "2026-04-26T13:51:39.215321+00:00",
       "rate_limiter_stats": {
         "total_requests": 5,
         "total_retries": 0

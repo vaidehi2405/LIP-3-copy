@@ -1,0 +1,248 @@
+{
+  "run_date": "2026-04-26T13:54:59.560071+00:00",
+  "review_window": {
+    "start": "2026-04-13T02:06:31-07:00",
+    "end": "2026-04-24T11:43:31+00:00"
+  },
+  "total_reviews_analyzed": 682,
+  "themes": [
+    {
+      "theme_name": "User Interface and Experience",
+      "description": "Users praise the app's user-friendly interface and experience",
+      "review_ids": [
+        "apple_13981446024",
+        "apple_13981111324",
+        "apple_13980648598",
+        "apple_13979031718",
+        "apple_13977137152",
+        "apple_13977008668",
+        "apple_13973750258",
+        "apple_13973449142",
+        "apple_13977351040",
+        "apple_13977343557",
+        "apple_13977305116",
+        "apple_13977167996",
+        "apple_13973033698",
+        "apple_13971588471",
+        "apple_13969785553",
+        "apple_13967770863",
+        "apple_13967351527",
+        "apple_13966099703",
+        "apple_13965104051",
+        "apple_13963378625",
+        "apple_13962757222",
+        "apple_13962603701",
+        "apple_13960941700",
+        "apple_13960520613",
+        "apple_13959662904",
+        "apple_13959541399",
+        "apple_13959514208",
+        "apple_13959183970",
+        "apple_13956684441",
+        "apple_13957164079",
+        "apple_13956064848",
+        "apple_13955981908",
+        "google_53d925c5-6a83-4455-bb06-c09653177095",
+        "google_29ab8eaf-afb1-4fe0-85f0-781e7d799165",
+        "google_11a3f4e0-5c9e-4a83-8620-93bc652062b2",
+        "google_864fe0a5-8c8d-4b64-8938-8df6929da242"
+      ],
+      "sentiment": "positive",
+      "volume": 41,
+      "representative_quote": {
+        "review_id": "apple_13981111324",
+        "quote": "User friendly",
+        "rating": 5
+      }
+    },
+    {
+      "theme_name": "App Performance and Technical Issues",
+      "description": "Users are experiencing issues with app performance and technical glitches",
+      "review_ids": [
+        "apple_13970725755",
+        "apple_13966122379",
+        "apple_13965790390",
+        "apple_13963341737",
+        "apple_13962717383",
+        "apple_13962674582",
+        "apple_13962553464",
+        "apple_13959312348",
+        "google_592391b5-bb70-42e7-b2a8-ff52b34d6bee",
+        "google_bc0fe0fd-c880-4f90-be69-b4fe80761064",
+        "google_e3278b19-a458-4be8-ae05-daaa7eb9c66e",
+        "google_a35ab9d7-a4e6-4d67-9b25-298de6ed43f6",
+        "google_fa4cfb10-f1a5-49f6-adb3-41a2584d8f4d",
+        "google_d02646c3-8b93-4cdc-9903-23d3735ee416",
+        "google_fd81393f-7fa7-4b7b-8619-bf342cc18043",
+        "google_e566c44f-901b-414c-bd15-e036ffcb3774"
+      ],
+      "sentiment": "negative",
+      "volume": 17,
+      "representative_quote": {
+        "review_id": "apple_13970725755",
+        "quote": "Worst app for trading… they buy even higher than candlea high…",
+        "rating": 1
+      }
+    },
+    {
+      "theme_name": "Investment and Trading Experience",
+      "description": "Users are having a good experience with investment and trading on the app",
+      "review_ids": [
+        "apple_13980818556",
+        "apple_13980460759",
+        "apple_13980407109",
+        "apple_13980488367",
+        "apple_13964299955",
+        "apple_13963199933",
+        "apple_13965104051",
+        "apple_13963089917",
+        "google_1eb7192a-7bef-46d1-8f3b-0e397661e3a9",
+        "google_89ba0e83-5116-4a90-a075-878318fa141c",
+        "google_196e30ae-89df-405c-b7d4-0bdc0e5c6502",
+        "google_ae765bfd-3007-4525-922d-359f732548a2",
+        "google_f54d99e9-6157-4b1e-848b-66d0d3c030f6"
+      ],
+      "sentiment": "positive",
+      "volume": 14,
+      "representative_quote": {
+        "review_id": "apple_13980818556",
+        "quote": "Why iphone don’t have creation portfolios option on stocks side where i can create separate portfolio",
+        "rating": 1
+      }
+    },
+    {
+      "theme_name": "Brokerage Fees and Charges",
+      "description": "Users are concerned about the high brokerage fees and charges",
+      "review_ids": [
+        "apple_13976912789",
+        "google_dbafde1c-1e6f-4ecb-9636-d998b99d6606",
+        "google_302cfbae-2f70-4519-b086-4c070f6e9ab2",
+        "google_6091c897-fa72-492f-a809-62688d0a8cdc",
+        "google_27649db1-e495-4faa-9c58-3a99656fcdbe",
+        "google_67159181-f3a0-4019-bcbb-d7995dae9ef4",
+        "google_90853165-34f6-4f93-81c9-12531a476ded",
+        "google_a5a181eb-3cb1-4e45-a975-45fc24740828",
+        "google_5ba01aa1-e8cd-48b5-831e-be5d832c305a",
+        "google_9246bcc4-2efb-48ea-8116-2b1111fa0176"
+      ],
+      "sentiment": "negative",
+      "volume": 10,
+      "representative_quote": {
+        "review_id": "apple_13976912789",
+        "quote": "Too much brokerage fee",
+        "rating": 5
+      }
+    },
+    {
+      "theme_name": "Customer Support and Responsiveness",
+      "description": "Users are praising the customer support and responsiveness",
+      "review_ids": [
+        "apple_13970670885",
+        "apple_13966396055",
+        "apple_13959183970",
+        "apple_13955742647",
+        "google_110b5fec-4a88-4751-9103-62402413f2ff",
+        "google_3063c3c6-bd3a-4275-874e-83cbb5eb5123",
+        "google_dcb0aa82-3a7d-4e89-8d18-d616e2885f52",
+        "google_9246bcc4-2efb-48ea-8116-2b1111fa0176",
+        "google_f3d4876c-bc50-44f6-a520-762ecc4ac7ba"
+      ],
+      "sentiment": "mixed",
+      "volume": 10,
+      "representative_quote": {
+        "review_id": "apple_13970670885",
+        "quote": "The customer service is very responsive and professional",
+        "rating": 5
+      }
+    }
+  ],
+  "metadata": {
+    "week_key": "2026-W16",
+    "pipeline_phase": "phase_1_scraping",
+    "started_at": "2026-04-26T13:50:19.921504+00:00",
+    "finished_at": "2026-04-26T13:51:43.093156+00:00",
+    "duration_seconds": 83.17,
+    "platforms_available": [
+      "apple",
+      "google"
+    ],
+    "platforms_failed": [],
+    "total_raw_reviews": 1000,
+    "total_normalized_reviews": 682,
+    "normalization_stats": {
+      "total_input": 1000,
+      "total_normalized": 1000,
+      "duplicates_skipped": 0,
+      "no_body_skipped": 0,
+      "outside_window_skipped": 0,
+      "parse_errors": 0,
+      "language_distribution": {
+        "en": 506,
+        "so": 132,
+        "und": 32,
+        "af": 53,
+        "no": 19,
+        "cy": 13,
+        "ro": 37,
+        "tl": 11,
+        "pl": 28,
+        "sq": 2,
+        "it": 26,
+        "ca": 29,
+        "de": 11,
+        "da": 20,
+        "nl": 1,
+        "id": 20,
+        "vi": 1,
+        "hi": 4,
+        "kn": 1,
+        "sv": 6,
+        "fr": 18,
+        "cs": 6,
+        "sl": 6,
+        "es": 5,
+        "et": 3,
+        "sw": 4,
+        "hr": 3,
+        "tr": 1,
+        "ml": 1,
+        "sk": 1
+      },
+      "all_reviews_outside_window": false,
+      "cross_run_duplicates_skipped": 318
+    },
+    "platform_metadata": {
+      "apple": {
+        "platform": "apple",
+        "app_id": 1404871703,
+        "country": "in",
+        "reviews_collected": 500,
+        "pages_fetched": 10,
+        "pages_failed": 0,
+        "partial": false,
+        "duration_seconds": 54.72,
+        "scraped_at": "2026-04-26T13:51:14.637143+00:00",
+        "rate_limiter_stats": {
+          "total_requests": 10,
+          "total_retries": 0
+        }
+      },
+      "google": {
+        "platform": "google",
+        "app_id": "com.nextbillion.groww",
+        "language": "en",
+        "reviews_collected": 500,
+        "batches_fetched": 5,
+        "batches_failed": 0,
+        "partial": false,
+        "duration_seconds": 24.58,
+        "scraped_at": "2026-04-26T13:51:39.215321+00:00",
+        "rate_limiter_stats": {
+          "total_requests": 5,
+          "total_retries": 0
+        }
+      }
+    },
+    "output_file": "data/raw\\2026-W16.jsonl"
+  }
+}
