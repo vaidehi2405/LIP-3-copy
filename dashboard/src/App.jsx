@@ -156,7 +156,7 @@ function App() {
                   <div className="stats-row">
                     <div className="stat-group">
                       <span className="stat-label">Mentions</span>
-                      <span className="stat-value">{theme.mentions} <span style={{ fontSize: '10px', color: 'var(--text-muted)' }}>({theme.mention_share})</span></span>
+                      <span className="stat-value">{theme.mentions}</span>
                     </div>
                     <div className="stat-group">
                       <span className="stat-label">Platform</span>

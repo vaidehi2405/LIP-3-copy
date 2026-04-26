@@ -114,23 +114,16 @@ def _dashboard_payload(current_file: Path, previous_file: Path | None) -> dict[s
     current_themes = theme_data.get("themes", [])
     previous_themes = previous_data.get("themes", [])
 
-    metadata = theme_data.get("metadata", {})
-    total_scraped_reviews = int(metadata.get("total_raw_reviews", 0) or 0)
-    total_normalized_reviews = int(metadata.get("total_normalized_reviews", 0) or 0)
-    total_reviews_analyzed = int(theme_data.get("total_reviews_analyzed", 0) or 0)
+    total_reviews = int(theme_data.get("total_reviews_analyzed", 0))
+    prev_reviews = int(previous_data.get("total_reviews_analyzed", 0)) if previous_data else 0
 
-    # Fall back gracefully if some fields are not present in legacy files.
-    analysis_base = total_reviews_analyzed or total_normalized_reviews or total_scraped_reviews
-
-    prev_reviews = int(previous_data.get("total_reviews_analyzed", 0) or 0)
-
-    total_mentions = sum(int(t.get("volume", 0) or 0) for t in current_themes)
-    positive_mentions = sum(int(t.get("volume", 0) or 0) for t in current_themes if t.get("sentiment") == "positive")
+    total_mentions = sum(int(t.get("volume", 0)) for t in current_themes)
+    positive_mentions = sum(int(t.get("volume", 0)) for t in current_themes if t.get("sentiment") == "positive")
 
     current_negative_issues = sum(1 for t in current_themes if t.get("sentiment") == "negative")
     prev_negative_issues = sum(1 for t in previous_themes if t.get("sentiment") == "negative")
 
-    reviews_trend, reviews_trend_type = _pct_delta(analysis_base, prev_reviews)
+    reviews_trend, reviews_trend_type = _pct_delta(total_reviews, prev_reviews)
     issues_trend, issues_trend_type = _pct_delta(current_negative_issues, prev_negative_issues)
 
     # Build action list from weekly note output if present.
@@ -152,39 +145,28 @@ def _dashboard_payload(current_file: Path, previous_file: Path | None) -> dict[s
             )
 
     themes = []
-    themed_review_ids: set[str] = set()
     for idx, t in enumerate(current_themes, start=1):
-        review_ids = [str(rid) for rid in t.get("review_ids", [])]
-        themed_review_ids.update(review_ids)
-
-        apple_count = sum(1 for rid in review_ids if rid.startswith("apple"))
-        google_count = sum(1 for rid in review_ids if rid.startswith("google"))
+        review_ids = t.get("review_ids", [])
+        apple_count = sum(1 for rid in review_ids if str(rid).startswith("apple"))
+        google_count = sum(1 for rid in review_ids if str(rid).startswith("google"))
         platforms = []
         if apple_count > 0:
             platforms.append("apple")
         if google_count > 0:
             platforms.append("google")
 
-        # Prefer explicit volume, but never under-report below actual review_ids count.
-        mention_count = max(int(t.get("volume", 0) or 0), len(review_ids))
-        mention_share = _safe_percent(mention_count, analysis_base)
-
         themes.append(
             {
                 "id": idx,
                 "name": t.get("theme_name", "Unnamed theme"),
                 "sentiment": t.get("sentiment", "neutral"),
-                "mentions": mention_count,
-                "mention_share": mention_share,
+                "mentions": int(t.get("volume", 0)),
                 "confidence": t.get("confidence", "N/A"),
                 "platforms": platforms,
                 "platform_counts": {"apple": apple_count, "google": google_count},
                 "quote": t.get("representative_quote", {}).get("quote", "No representative quote available."),
             }
         )
-
-    themed_reviews_count = len(themed_review_ids)
-    coverage = _safe_percent(themed_reviews_count, analysis_base)
 
     top_negative = max(
         (t for t in themes if t["sentiment"] == "negative"),
@@ -195,7 +177,7 @@ def _dashboard_payload(current_file: Path, previous_file: Path | None) -> dict[s
     alert = None
     if top_negative and top_negative["mentions"] > 0:
         alert = {
-            "message": f"Action required: '{top_negative['name']}' has {top_negative['mentions']} mentions ({top_negative['mention_share']}) this week.",
+            "message": f"Action required: '{top_negative['name']}' has {top_negative['mentions']} negative mentions this week.",
             "cta": "Review Theme",
         }
 
@@ -205,25 +187,25 @@ def _dashboard_payload(current_file: Path, previous_file: Path | None) -> dict[s
         "alert": alert,
         "metrics": [
             {
-                "label": "Reviews Scraped",
-                "value": str(total_scraped_reviews or analysis_base),
-                "trend": "Pipeline output",
-                "trendType": "neutral",
-                "context": "All raw reviews collected",
-            },
-            {
                 "label": "Reviews Analyzed",
-                "value": str(analysis_base),
+                "value": str(total_reviews),
                 "trend": reviews_trend,
                 "trendType": reviews_trend_type,
-                "context": "Eligible for theme extraction",
+                "context": "vs previous week",
             },
             {
-                "label": "Theme Coverage",
-                "value": coverage,
-                "trend": f"{themed_reviews_count}/{analysis_base}",
+                "label": "Themes Identified",
+                "value": str(len(current_themes)),
+                "trend": "Current week",
                 "trendType": "neutral",
-                "context": "Analyzed reviews mapped to top themes",
+                "context": "LLM extracted themes",
+            },
+            {
+                "label": "Positive Sentiment",
+                "value": _safe_percent(positive_mentions, total_mentions),
+                "trend": "Based on mention volume",
+                "trendType": "neutral",
+                "context": f"{positive_mentions}/{total_mentions} mentions",
             },
             {
                 "label": "Critical Issues Detected",
